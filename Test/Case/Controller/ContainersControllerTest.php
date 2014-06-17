@@ -23,11 +23,15 @@ class ContainersControllerTest extends ControllerTestCase {
  */
 	public $fixtures = array(
 		'plugin.containers.container',
-		//'plugin.containers.box',
-		//'plugin.containers.page',
-		//'plugin.containers.containers_page',
+		'plugin.containers.containers_page',
 		'plugin.containers.site_setting',
-		'plugin.containers.site_setting_value'
+		'plugin.containers.site_setting_value',
+		'plugin.containers.box',
+		'plugin.containers.boxes_page',
+		'plugin.containers.page',
+		'plugin.containers.space',
+		'plugin.containers.room',
+		'plugin.containers.frame',
 	);
 
 /**
@@ -36,38 +40,18 @@ class ContainersControllerTest extends ControllerTestCase {
  * @return void
  */
 	public function testIndex() {
+		$this->testAction('/containers/containers/index/1', array('return' => 'view'));
+		$this->assertTextContains('<div class="box-site box-id-', $this->view);
 	}
 
 /**
- * testView method
+ * testIndexNotFound method
  *
  * @return void
  */
-	public function testView() {
-	}
-
-/**
- * testAdd method
- *
- * @return void
- */
-	public function testAdd() {
-	}
-
-/**
- * testEdit method
- *
- * @return void
- */
-	public function testEdit() {
-	}
-
-/**
- * testDelete method
- *
- * @return void
- */
-	public function testDelete() {
+	public function testIndexNotFound() {
+		$this->setExpectedException('NotFoundException');
+		$this->testAction('/containers/containers/index');
 	}
 
 }
