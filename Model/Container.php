@@ -19,6 +19,13 @@ App::uses('ContainersAppModel', 'Containers.Model');
  */
 class Container extends ContainersAppModel {
 
+/**
+ * Default behaviors
+ *
+ * @var array
+ */
+	public $actsAs = array('Containable');
+
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -62,5 +69,30 @@ class Container extends ContainersAppModel {
 			'finderQuery' => '',
 		)
 	);
+
+/**
+ * Get container with frame
+ *
+ * @param string $id Container ID
+ * @return array
+ */
+	public function getContainerWithFrame($id) {
+		$query = array(
+			'conditions' => array(
+				'Container.id' => $id
+			),
+			'contain' => array(
+				'Box' => $this->Box->getContainableQueryAssociatedPage(),
+				'Page' => array(
+					'conditions' => array(
+						// It must check settingmode and page_id
+						'ContainersPage.is_visible' => true
+					)
+				)
+			)
+		);
+
+		return $this->find('first', $query);
+	}
 
 }

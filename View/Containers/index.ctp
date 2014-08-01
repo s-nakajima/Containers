@@ -8,10 +8,9 @@
  * @link http://www.netcommons.org NetCommons Project
  * @license http://www.netcommons.org/license.txt NetCommons License
  */
-?>
 
-<?php foreach ($container['Box'] as $box): ?>
-	<div class="box-site box-id-<?php echo $box['id']; ?>">
-		<?php echo $this->requestAction('boxes/boxes/index/' . $box['id'], array('return')); ?>
-	</div>
-<?php endforeach;
+echo $this->element('Containers.render_containers',
+	array(
+		'containers' => $containers,
+		'boxes' => $boxes
+	));

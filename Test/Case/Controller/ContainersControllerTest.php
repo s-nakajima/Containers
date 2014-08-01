@@ -33,12 +33,13 @@ class ContainersControllerTest extends ControllerTestCase {
 		'plugin.containers.containers_page',
 		'plugin.containers.site_setting',
 		'plugin.containers.site_setting_value',
-		'plugin.containers.box',
-		'plugin.containers.boxes_page',
-		'plugin.containers.page',
-		'plugin.containers.space',
-		'plugin.containers.room',
-		'plugin.containers.frame',
+		'plugin.boxes.box',
+		'plugin.boxes.boxes_page',
+		'plugin.boxes.page',
+		'plugin.boxes.plugin',
+		'plugin.frames.frame',
+		'plugin.frames.language',
+		'plugin.frames.frames_language'
 	);
 
 /**
@@ -48,7 +49,7 @@ class ContainersControllerTest extends ControllerTestCase {
  */
 	public function testIndex() {
 		$this->testAction('/containers/containers/index/1', array('return' => 'view'));
-		$this->assertTextContains('<div class="box-site box-id-', $this->view);
+		$this->assertTextContains('<header id="container-header">', $this->view);
 	}
 
 /**

@@ -23,12 +23,16 @@ class ContainersController extends ContainersAppController {
  * @return void
  */
 	public function index($id = null) {
-		$container = $this->Container->findById($id);
+		$container = $this->Container->getContainerWithFrame($id);
 		if (empty($container)) {
 			throw new NotFoundException();
 		}
 
-		$this->set('container', $container);
+		$containers = array($container['Container']['type'] => $container['Container']);
+		$boxes = Hash::combine($container['Box'], '{n}.id', '{n}', '{n}.container_id');
+
+		$this->set('containers', $containers);
+		$this->set('boxes', $boxes);
 	}
 
 }
