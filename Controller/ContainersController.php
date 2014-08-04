@@ -12,6 +12,7 @@
  */
 
 App::uses('ContainersAppController', 'Containers.Controller');
+Configure::load('Containers.config');
 
 class ContainersController extends ContainersAppController {
 
