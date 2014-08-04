@@ -16,6 +16,13 @@ App::uses('ContainersAppController', 'Containers.Controller');
 class ContainersController extends ContainersAppController {
 
 /**
+ * uses
+ *
+ * @var array
+ */
+	public $uses = array('Containers.Container');
+
+/**
  * index method
  *
  * @param string $id containerId

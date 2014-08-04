@@ -17,13 +17,6 @@ App::uses('ContainersController', 'Containers.Controller');
 class ContainersControllerTest extends ControllerTestCase {
 
 /**
- * AutoMock
- *
- * @var bool
- */
-	public $autoMock = false;
-
-/**
  * Fixtures
  *
  * @var array
