@@ -3,7 +3,7 @@
  * Containers Controller
  *
  * @property Container $Container
- * 
+ *
  * @copyright Copyright 2014, NetCommons Project
  * @author Kohei Teraguchi <kteraguchi@netcommons.org>
  * @since 3.0.0.0
@@ -12,7 +12,6 @@
  */
 
 App::uses('ContainersAppController', 'Containers.Controller');
-Configure::load('Containers.config');
 
 class ContainersController extends ContainersAppController {
 

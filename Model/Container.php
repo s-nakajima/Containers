@@ -20,6 +20,15 @@ App::uses('ContainersAppModel', 'Containers.Model');
 class Container extends ContainersAppModel {
 
 /**
+ * constant value
+ */
+	const TYPE_HEADER = '1';
+	const TYPE_MAJOR = '2';
+	const TYPE_MAIN = '3';
+	const TYPE_MINOR = '4';
+	const TYPE_FOOTER = '5';
+
+/**
  * Default behaviors
  *
  * @var array

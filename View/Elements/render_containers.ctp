@@ -10,56 +10,56 @@
  */
 ?>
 
-<?php if (isset($containers[Configure::read('Containers.type.header')])): ?>
+<?php if (isset($containers[Container::TYPE_HEADER])): ?>
 	<!-- container-header -->
 	<header id="container-header">
-		<?php 
+		<?php
 			echo $this->element('Boxes.render_boxes',
-				array('boxes' => $boxes[$containers[Configure::read('Containers.type.header')]['id']]));
+				array('boxes' => $boxes[$containers[Container::TYPE_HEADER]['id']]));
 		?>
 	</header>
 <?php endif; ?>
 
 <div class="container">
 
-	<?php if (isset($containers[Configure::read('Containers.type.major')])): ?>
+	<?php if (isset($containers[Container::TYPE_MAJOR])): ?>
 		<!-- container-major -->
 		<div id="container-major" class="col-sm-3">
-			<?php 
+			<?php
 				echo $this->element('Boxes.render_boxes',
-					array('boxes' => $boxes[$containers[Configure::read('Containers.type.major')]['id']]));
+					array('boxes' => $boxes[$containers[Container::TYPE_MAJOR]['id']]));
 			?>
 		</div>
 	<?php endif; ?>
 
 	<!-- container-main -->
-	<?php if (isset($containers[Configure::read('Containers.type.main')])): ?>
+	<?php if (isset($containers[Container::TYPE_MAIN])): ?>
 		<div id="container-main" class="col-sm-6" role="main">
-			<?php 
+			<?php
 				echo $this->element('Boxes.render_boxes',
-					array('boxes' => $boxes[$containers[Configure::read('Containers.type.main')]['id']]));
+					array('boxes' => $boxes[$containers[Container::TYPE_MAIN]['id']]));
 			?>
 		</div>
 	<?php endif; ?>
 
-	<?php if (isset($containers[Configure::read('Containers.type.minor')])): ?>
+	<?php if (isset($containers[Container::TYPE_MINOR])): ?>
 		<!-- container-minor  -->
 		<div id="container-minor" class="col-sm-3">
-			<?php 
+			<?php
 				echo $this->element('Boxes.render_boxes',
-					array('boxes' => $boxes[$containers[Configure::read('Containers.type.minor')]['id']]));
+					array('boxes' => $boxes[$containers[Container::TYPE_MINOR]['id']]));
 			?>
 		</div>
 	<?php endif; ?>
 
 </div>
 
-<?php if (isset($containers[Configure::read('Containers.type.footer')])): ?>
+<?php if (isset($containers[Container::TYPE_FOOTER])): ?>
 	<!-- area-footer  -->
 	<footer id="container-footer" role="contentinfo">
-		<?php 
+		<?php
 			echo $this->element('Boxes.render_boxes',
-				array('boxes' => $boxes[$containers[Configure::read('Containers.type.footer')]['id']]));
+				array('boxes' => $boxes[$containers[Container::TYPE_FOOTER]['id']]));
 		?>
 	</footer>
 <?php endif;
