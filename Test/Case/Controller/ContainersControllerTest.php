@@ -24,7 +24,6 @@ class ContainersControllerTest extends ControllerTestCase {
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
 		'plugin.containers.site_setting',
-		'plugin.containers.site_setting_value',
 		'plugin.boxes.box',
 		'plugin.boxes.boxes_page',
 		'plugin.boxes.page',
