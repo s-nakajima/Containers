@@ -94,7 +94,7 @@ class Container extends ContainersAppModel {
 				'Page' => array(
 					'conditions' => array(
 						// It must check settingmode and page_id
-						'ContainersPage.is_visible' => true
+						'ContainersPage.is_published' => true
 					)
 				)
 			)

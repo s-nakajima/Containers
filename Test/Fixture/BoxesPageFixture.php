@@ -22,7 +22,7 @@ class BoxesPageFixture extends CakeTestFixture {
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
 		'page_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'box_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'is_visible' => array('type' => 'boolean', 'null' => true, 'default' => null),
+		'is_published' => array('type' => 'boolean', 'null' => true, 'default' => null),
 		'created_user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified_user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
