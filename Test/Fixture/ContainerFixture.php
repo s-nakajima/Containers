@@ -47,7 +47,31 @@ class ContainerFixture extends CakeTestFixture {
 		),
 		array(
 			'id' => 2,
-			'type' => 1,
+			'type' => 2,
+			'created_user_id' => 1,
+			'created' => '2014-04-30 03:07:45',
+			'modified_user_id' => 1,
+			'modified' => '2014-04-30 03:07:45'
+		),
+		array(
+			'id' => 3,
+			'type' => 3,
+			'created_user_id' => 1,
+			'created' => '2014-04-30 03:07:45',
+			'modified_user_id' => 1,
+			'modified' => '2014-04-30 03:07:45'
+		),
+		array(
+			'id' => 4,
+			'type' => 4,
+			'created_user_id' => 1,
+			'created' => '2014-04-30 03:07:45',
+			'modified_user_id' => 1,
+			'modified' => '2014-04-30 03:07:45'
+		),
+		array(
+			'id' => 5,
+			'type' => 5,
 			'created_user_id' => 1,
 			'created' => '2014-04-30 03:07:45',
 			'modified_user_id' => 1,

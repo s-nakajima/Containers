@@ -12,6 +12,12 @@
 
 App::uses('ContainersAppController', 'Containers.Controller');
 
+/**
+ * ContainersApp Controller
+ *
+ * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
+ * @package NetCommons\Containers\Controller
+ */
 class ContainersController extends ContainersAppController {
 
 /**

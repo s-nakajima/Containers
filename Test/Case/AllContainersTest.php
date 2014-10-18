@@ -8,6 +8,13 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  */
 
+/**
+ * Containers All Test Suite
+ *
+ * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
+ * @package NetCommons\Blocks\Test\Case
+ * @codeCoverageIgnore
+ */
 class AllContainersTest extends CakeTestSuite {
 
 /**

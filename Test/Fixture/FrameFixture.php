@@ -20,24 +20,126 @@ class FrameFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+		'language_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 6),
+		'room_id' => array('type' => 'integer', 'null' => false, 'default' => null),
 		'box_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-		'parent_id' => array('type' => 'integer', 'null' => false, 'default' => null),
-		'lft' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'rght' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'plugin_id' => array('type' => 'integer', 'null' => false, 'default' => null),
+		'plugin_key' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'block_id' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'weight' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'is_published' => array('type' => 'boolean', 'null' => true, 'default' => null),
-		'from' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'to' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'created_user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'key' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => 'Key of the frame.', 'charset' => 'utf8'),
+		'name' => array('type' => 'string', 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => 'Name of the frame.', 'charset' => 'utf8'),
+		'weight' => array('type' => 'integer', 'null' => true, 'default' => null, 'comment' => 'Display order.'),
+		'is_published' => array('type' => 'boolean', 'null' => true, 'default' => null, 'comment' => '一般以下のパートが閲覧可能かどうか。
+
+ルーム配下ならルーム管理者、またはそれに準ずるユーザ(room_parts.edit_page, room_parts.create_page 双方が true のユーザ)はこの値に関わらず閲覧できる。
+e.g.) ルーム管理者、またはそれに準ずるユーザ: ルーム管理者、編集長'),
+		'from' => array('type' => 'datetime', 'null' => true, 'default' => null, 'comment' => 'Datetime display frame from.'),
+		'to' => array('type' => 'datetime', 'null' => true, 'default' => null, 'comment' => 'Datetime display frame to.'),
+		'created_user' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'modified_user_id' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'modified_user' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 		),
-		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
+		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB'),
+	);
+
+/**
+ * Records
+ *
+ * @var array
+ */
+	public $records = array(
+		array(
+			'id' => 1,
+			'language_id' => 2,
+			'room_id' => 1,
+			'box_id' => 1,
+			'plugin_key' => 'test_plugin',
+			'block_id' => 5,
+			'key' => 'frame_1',
+			'name' => 'Test frame name 1',
+			'weight' => 1,
+			'is_published' => 1,
+			'from' => '2014-07-25 08:10:53',
+			'to' => '2014-07-25 08:10:53',
+			'created_user' => 1,
+			'created' => '2014-07-25 08:10:53',
+			'modified_user' => 1,
+			'modified' => '2014-07-25 08:10:53'
+		),
+		array(
+			'id' => 2,
+			'language_id' => 2,
+			'room_id' => 2,
+			'box_id' => 2,
+			'plugin_key' => 'test_plugin',
+			'block_id' => 2,
+			'key' => 'frame_2',
+			'name' => '',
+			'weight' => 2,
+			'is_published' => 1,
+			'from' => '2014-07-25 08:10:53',
+			'to' => '2014-07-25 08:10:53',
+			'created_user' => 2,
+			'created' => '2014-07-25 08:10:53',
+			'modified_user' => 2,
+			'modified' => '2014-07-25 08:10:53'
+		),
+		array(
+			'id' => 3,
+			'language_id' => 2,
+			'room_id' => 3,
+			'box_id' => 3,
+			'plugin_key' => 'test_plugin',
+			'block_id' => 3,
+			'key' => 'frame_3',
+			'name' => '',
+			'weight' => 3,
+			'is_published' => 1,
+			'from' => '2014-07-25 08:10:53',
+			'to' => '2014-07-25 08:10:53',
+			'created_user' => 3,
+			'created' => '2014-07-25 08:10:53',
+			'modified_user' => 3,
+			'modified' => '2014-07-25 08:10:53'
+		),
+		array(
+			'id' => 4,
+			'language_id' => 2,
+			'room_id' => 4,
+			'box_id' => 4,
+			'plugin_key' => 'test_plugin',
+			'block_id' => 4,
+			'key' => 'frame_4',
+			'name' => '',
+			'weight' => 4,
+			'is_published' => 1,
+			'from' => '2014-07-25 08:10:53',
+			'to' => '2014-07-25 08:10:53',
+			'created_user' => 4,
+			'created' => '2014-07-25 08:10:53',
+			'modified_user' => 4,
+			'modified' => '2014-07-25 08:10:53'
+		),
+		array(
+			'id' => 5,
+			'language_id' => 2,
+			'room_id' => 5,
+			'box_id' => 5,
+			'plugin_key' => 'test_plugin',
+			'block_id' => 5,
+			'key' => 'frame_5',
+			'name' => '',
+			'weight' => 5,
+			'is_published' => 1,
+			'from' => '2014-07-25 08:10:53',
+			'to' => '2014-07-25 08:10:53',
+			'created_user' => 5,
+			'created' => '2014-07-25 08:10:53',
+			'modified_user' => 5,
+			'modified' => '2014-07-25 08:10:53'
+		),
 	);
 
 }

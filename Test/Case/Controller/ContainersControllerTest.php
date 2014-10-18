@@ -11,7 +11,38 @@
 App::uses('ContainersController', 'Containers.Controller');
 
 /**
+ * Plugin controller class for testAction
+ *
+ * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
+ * @package NetCommons\Containers\Test\Case\Controller
+ */
+class TestPluginController extends ContainersController {
+
+/**
+ * Set to true to automatically render the view
+ * after action logic.
+ *
+ * @var bool
+ */
+	public $autoRender = false;
+
+/**
+ * index action
+ *
+ * @param string $id frameId
+ * @return string
+ */
+	public function index($id = null) {
+		return 'TestPluginController_index_' . $id;
+	}
+}
+CakePlugin::load('TestPlugin', array('path' => 'test_plugin'));
+
+/**
  * Summary for ContainersController Test Case
+ *
+ * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
+ * @package NetCommons\Containers\Test\Case\Controller
  */
 class ContainersControllerTest extends ControllerTestCase {
 
@@ -28,9 +59,9 @@ class ContainersControllerTest extends ControllerTestCase {
 		'plugin.boxes.boxes_page',
 		'plugin.boxes.page',
 		'plugin.boxes.plugin',
-		'plugin.frames.frame',
+		'plugin.containers.frame',
 		'plugin.frames.language',
-		'plugin.frames.frames_language'
+		//'plugin.frames.frames_language'
 	);
 
 /**
@@ -41,6 +72,46 @@ class ContainersControllerTest extends ControllerTestCase {
 	public function testIndex() {
 		$this->testAction('/containers/containers/index/1', array('return' => 'view'));
 		$this->assertTextContains('<header id="container-header">', $this->view);
+	}
+
+/**
+ * testIndexContainerMajor method
+ *
+ * @return void
+ */
+	public function testIndexContainerMajor() {
+		$this->testAction('/containers/containers/index/2', array('return' => 'view'));
+		$this->assertTextContains('<div id="container-major" class="col-sm-3">', $this->view);
+	}
+
+/**
+ * testIndexContainerMain method
+ *
+ * @return void
+ */
+	public function testIndexContainerMain() {
+		$this->testAction('/containers/containers/index/3', array('return' => 'view'));
+		$this->assertTextContains('<div id="container-main" class="col-sm-6" role="main">', $this->view);
+	}
+
+/**
+ * testIndexContainerMinor method
+ *
+ * @return void
+ */
+	public function testIndexContainerMinor() {
+		$this->testAction('/containers/containers/index/4', array('return' => 'view'));
+		$this->assertTextContains('div id="container-minor" class="col-sm-3">', $this->view);
+	}
+
+/**
+ * testIndexContainerFooter method
+ *
+ * @return void
+ */
+	public function testIndexContainerFooter() {
+		$this->testAction('/containers/containers/index/5', array('return' => 'view'));
+		$this->assertTextContains('<footer id="container-footer" role="contentinfo">', $this->view);
 	}
 
 /**
