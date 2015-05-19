@@ -61,7 +61,6 @@ class ContainersControllerTest extends ControllerTestCase {
 		'plugin.boxes.plugin',
 		'plugin.containers.frame',
 		'plugin.frames.language',
-		'plugin.users.user',
 	);
 
 /**
