@@ -21,15 +21,16 @@ class ContainerTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
+		'plugin.boxes.box',
+		'plugin.boxes.boxes_page',
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		'plugin.boxes.box',
-		'plugin.boxes.page',
-		'plugin.boxes.boxes_page',
-		'plugin.boxes.plugin',
-		'plugin.containers.frame',
-		'plugin.frames.language',
-		//'plugin.frames.frames_language'
+		'plugin.frames.frame',
+		'plugin.pages.page',
+		'plugin.m17n.language',
+		'plugin.net_commons.plugin',
+		'plugin.users.user',
+		'plugin.users.user_attributes_user',
 	);
 
 /**
@@ -75,13 +76,13 @@ class ContainerTest extends CakeTestCase {
 		$this->assertInternalType('array', $container['Box'][0]['Frame'], 'Frame');
 		$this->assertGreaterThanOrEqual(1, count($container['Box'][0]['Frame']), 'Frame');
 
-		$this->assertArrayHasKey('Plugin', $container['Box'][0]['Frame'][0], 'Plugin');
-		$this->assertInternalType('array', $container['Box'][0]['Frame'][0]['Plugin'], 'Plugin');
-		$this->assertEqual(0, count($container['Box'][0]['Frame'][0]['Plugin']), 'Plugin');
-
-		$this->assertArrayHasKey('Language', $container['Box'][0]['Frame'][0], 'Language');
-		$this->assertInternalType('array', $container['Box'][0]['Frame'][0]['Language'], 'Language');
-		$this->assertGreaterThanOrEqual(1, count($container['Box'][0]['Frame'][0]['Language']), 'Language');
+		//$this->assertArrayHasKey('Plugin', $container['Box'][0]['Frame'][0], 'Plugin');
+		//$this->assertInternalType('array', $container['Box'][0]['Frame'][0]['Plugin'], 'Plugin');
+		//$this->assertEqual(0, count($container['Box'][0]['Frame'][0]['Plugin']), 'Plugin');
+		//
+		//$this->assertArrayHasKey('Language', $container['Box'][0]['Frame'][0], 'Language');
+		//$this->assertInternalType('array', $container['Box'][0]['Frame'][0]['Language'], 'Language');
+		//$this->assertGreaterThanOrEqual(1, count($container['Box'][0]['Frame'][0]['Language']), 'Language');
 
 		//$this->assertArrayHasKey('FramesLanguage', $container['Box'][0]['Frame'][0]['Language'][0]);
 		//$this->assertInternalType('array', $container['Box'][0]['Frame'][0]['Language'][0]['FramesLanguage']);
