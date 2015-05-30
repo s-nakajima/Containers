@@ -52,15 +52,15 @@ class ContainersControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'plugin.containers.container',
-		'plugin.containers.containers_page',
-		'plugin.net_commons.site_setting',
 		'plugin.boxes.box',
 		'plugin.boxes.boxes_page',
-		'plugin.boxes.page',
-		'plugin.boxes.plugin',
-		'plugin.containers.frame',
-		'plugin.frames.language',
+		'plugin.containers.container',
+		'plugin.containers.containers_page',
+		'plugin.frames.frame',
+		'plugin.pages.page',
+		'plugin.m17n.language',
+		'plugin.net_commons.plugin',
+		'plugin.net_commons.site_setting',
 	);
 
 /**
