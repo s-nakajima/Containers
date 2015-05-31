@@ -89,7 +89,7 @@ class ContainersPageFixture extends CakeTestFixture {
 			'modified_user' => null,
 			'modified' => '2014-05-12 05:04:42'
 		),
-		
+
 		//page.permalink=test
 		array(
 			'page_id' => '2',
