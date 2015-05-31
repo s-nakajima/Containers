@@ -59,8 +59,8 @@ class ContainersControllerTest extends ControllerTestCase {
 		'plugin.frames.frame',
 		'plugin.pages.page',
 		'plugin.m17n.language',
-		'plugin.net_commons.plugin',
 		'plugin.net_commons.site_setting',
+		'plugin.plugin_manager.plugin',
 	);
 
 /**

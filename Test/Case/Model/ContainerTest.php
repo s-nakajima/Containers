@@ -28,7 +28,7 @@ class ContainerTest extends CakeTestCase {
 		'plugin.frames.frame',
 		'plugin.pages.page',
 		'plugin.m17n.language',
-		'plugin.net_commons.plugin',
+		'plugin.plugin_manager.plugin',
 		'plugin.users.user',
 		'plugin.users.user_attributes_user',
 	);
