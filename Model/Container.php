@@ -92,10 +92,10 @@ class Container extends ContainersAppModel {
 			'contain' => array(
 				'Box' => $this->Box->getContainableQueryAssociatedPage(),
 				'Page' => array(
-					'conditions' => array(
-						// It must check settingmode and page_id
-						'ContainersPage.is_published' => true
-					)
+					//'conditions' => array(
+					//	// It must check settingmode and page_id
+					//	'ContainersPage.is_published' => true
+					//)
 				)
 			)
 		);
