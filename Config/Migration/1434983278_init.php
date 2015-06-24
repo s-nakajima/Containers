@@ -65,7 +65,7 @@ e.g.) ルーム管理者、またはそれに準ずるユーザ: ルーム管理
 		),
 		'down' => array(
 			'drop_table' => array(
-				'containers', 'containers_pages',
+				'containers', 'containers_pages'
 			),
 		),
 	);
