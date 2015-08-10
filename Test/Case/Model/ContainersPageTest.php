@@ -34,7 +34,7 @@ class ContainersPageTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->ContainersPage = ClassRegistry::init('Pages.ContainersPage');
+		$this->ContainersPage = ClassRegistry::init('Containers.ContainersPage');
 	}
 
 /**
