@@ -21,16 +21,16 @@ class ContainerTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'plugin.boxes.box',
-		'plugin.boxes.boxes_page',
+		//'plugin.boxes.box',
+		//'plugin.boxes.boxes_page',
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		'plugin.frames.frame',
-		'plugin.pages.page',
-		'plugin.m17n.language',
-		'plugin.plugin_manager.plugin',
-		'plugin.users.user',
-		'plugin.users.user_attributes_user',
+		//'plugin.frames.frame',
+		//'plugin.pages.page',
+		//'plugin.m17n.language',
+		//'plugin.plugin_manager.plugin',
+		//'plugin.users.user',
+		//'plugin.users.user_attributes_user',
 	);
 
 /**
