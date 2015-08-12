@@ -9,11 +9,12 @@
  */
 
 App::uses('ContainersPage', 'Pages.Model');
+App::uses('YACakeTestCase', 'NetCommons.TestSuite');
 
 /**
  * Summary for ContainersPage Test Case
  */
-class ContainersPageTest extends CakeTestCase {
+class ContainersPageTest extends YACakeTestCase {
 
 /**
  * Fixtures
