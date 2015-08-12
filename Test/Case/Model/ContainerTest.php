@@ -41,6 +41,7 @@ class ContainerTest extends YACakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
+		Configure::write('Config.languageId', '2');
 		$this->Container = ClassRegistry::init('Containers.Container');
 	}
 
@@ -51,6 +52,7 @@ class ContainerTest extends YACakeTestCase {
  */
 	public function tearDown() {
 		unset($this->Container);
+		Configure::write('Config.languageId', null);
 
 		parent::tearDown();
 	}
