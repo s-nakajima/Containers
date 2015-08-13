@@ -24,8 +24,6 @@ class ContainersPageTest extends YACakeTestCase {
 	public $fixtures = array(
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		//'plugin.pages.page',
-		//'plugin.users.user',
 	);
 
 /**
