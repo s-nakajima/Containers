@@ -9,11 +9,12 @@
  */
 
 App::uses('ContainersPage', 'Pages.Model');
+App::uses('YACakeTestCase', 'NetCommons.TestSuite');
 
 /**
  * Summary for ContainersPage Test Case
  */
-class ContainersPageTest extends CakeTestCase {
+class ContainersPageTest extends YACakeTestCase {
 
 /**
  * Fixtures
@@ -23,8 +24,6 @@ class ContainersPageTest extends CakeTestCase {
 	public $fixtures = array(
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		'plugin.pages.page',
-		'plugin.users.user',
 	);
 
 /**
@@ -34,7 +33,7 @@ class ContainersPageTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->ContainersPage = ClassRegistry::init('Pages.ContainersPage');
+		$this->ContainersPage = ClassRegistry::init('Containers.ContainersPage');
 	}
 
 /**

@@ -9,11 +9,12 @@
  */
 
 App::uses('Container', 'Containers.Model');
+App::uses('YACakeTestCase', 'NetCommons.TestSuite');
 
 /**
  * Summary for Container Test Case
  */
-class ContainerTest extends CakeTestCase {
+class ContainerTest extends YACakeTestCase {
 
 /**
  * Fixtures
@@ -21,16 +22,8 @@ class ContainerTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'plugin.boxes.box',
-		'plugin.boxes.boxes_page',
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		'plugin.frames.frame',
-		'plugin.pages.page',
-		'plugin.m17n.language',
-		'plugin.plugin_manager.plugin',
-		'plugin.users.user',
-		'plugin.users.user_attributes_user',
 	);
 
 /**
@@ -40,6 +33,7 @@ class ContainerTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
+		Configure::write('Config.languageId', '2');
 		$this->Container = ClassRegistry::init('Containers.Container');
 	}
 
@@ -50,6 +44,7 @@ class ContainerTest extends CakeTestCase {
  */
 	public function tearDown() {
 		unset($this->Container);
+		Configure::write('Config.languageId', null);
 
 		parent::tearDown();
 	}

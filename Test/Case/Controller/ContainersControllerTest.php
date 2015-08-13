@@ -9,6 +9,7 @@
  */
 
 App::uses('ContainersController', 'Containers.Controller');
+App::uses('YAControllerTestCase', 'NetCommons.TestSuite');
 
 /**
  * Plugin controller class for testAction
@@ -44,7 +45,7 @@ CakePlugin::load('TestPlugin', array('path' => 'test_plugin'));
  * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
  * @package NetCommons\Containers\Test\Case\Controller
  */
-class ContainersControllerTest extends ControllerTestCase {
+class ContainersControllerTest extends YAControllerTestCase {
 
 /**
  * Fixtures
@@ -52,15 +53,8 @@ class ContainersControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'plugin.boxes.box',
-		'plugin.boxes.boxes_page',
 		'plugin.containers.container',
 		'plugin.containers.containers_page',
-		'plugin.frames.frame',
-		'plugin.pages.page',
-		'plugin.m17n.language',
-		'plugin.net_commons.site_setting',
-		'plugin.plugin_manager.plugin',
 	);
 
 /**
