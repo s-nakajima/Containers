@@ -51,43 +51,21 @@ class ContainersPage extends PagesAppModel {
  */
 	public function saveContainersPage($data) {
 		//トランザクションBegin
-		$this->setDataSource('master');
-		$dataSource = $this->getDataSource();
-		$dataSource->begin();
+		$this->begin();
 
+		if (! $this->validateMany($data['ContainersPage'])) {
+			return false;
+		}
 		try {
-			if (! $this->validateContainersPage($data['ContainersPage'])) {
-				return false;
-			}
-
 			if (! $this->saveMany($data['ContainersPage'], ['validate' => false])) {
 				throw new InternalErrorException(__d('net_commons', 'Internal Server Error'));
 			}
-
-			$dataSource->commit();
+			$this->commit();
 
 		} catch (Exception $ex) {
-			$dataSource->rollback();
-			CakeLog::error($ex);
-			throw $ex;
-		}
-	}
-
-/**
- * validate ContainersPage
- *
- * @param array $data received post data
- * @return bool True on success, false on error
- */
-	public function validateContainersPage($data) {
-		//バリデーション
-		$this->validateMany($data);
-
-		if ($this->validationErrors) {
-			return false;
+			$this->rollback($ex);
 		}
 
 		return true;
 	}
-
 }
