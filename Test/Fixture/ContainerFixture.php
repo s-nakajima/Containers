@@ -86,6 +86,15 @@ class ContainerFixture extends CakeTestFixture {
 			'modified_user' => null,
 			'modified' => '2014-05-12 05:04:42'
 		),
+		//別ルーム(room_id=2)
+		array(
+			'id' => '7',
+			'type' => '3',
+			'created_user' => null,
+			'created' => '2014-05-12 05:04:42',
+			'modified_user' => null,
+			'modified' => '2014-05-12 05:04:42'
+		),
 	);
 
 }
