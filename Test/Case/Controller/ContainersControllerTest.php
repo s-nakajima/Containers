@@ -9,7 +9,7 @@
  */
 
 App::uses('ContainersController', 'Containers.Controller');
-App::uses('YAControllerTestCase', 'NetCommons.TestSuite');
+App::uses('NetCommonsControllerTestCase', 'NetCommons.TestSuite');
 
 /**
  * Plugin controller class for testAction
@@ -45,7 +45,7 @@ CakePlugin::load('TestPlugin', array('path' => 'test_plugin'));
  * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
  * @package NetCommons\Containers\Test\Case\Controller
  */
-class ContainersControllerTest extends YAControllerTestCase {
+class ContainersControllerTest extends NetCommonsControllerTestCase {
 
 /**
  * Fixtures
