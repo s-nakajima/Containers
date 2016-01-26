@@ -8,34 +8,26 @@
  * @license http://www.netcommons.org/license.txt NetCommons License
  */
 
+App::uses('NetCommonsTestSuite', 'NetCommons.TestSuite');
+
 /**
  * Containers All Test Suite
  *
  * @author Kohei Teraguchi <kteraguchi@commonsnet.org>
- * @package NetCommons\Blocks\Test\Case
+ * @package NetCommons\Containers\Test\Case
  * @codeCoverageIgnore
  */
-class AllContainersTest extends CakeTestSuite {
+class AllContainersTest extends NetCommonsTestSuite {
 
 /**
  * Suite defines all the tests for Containers
  *
- * @return CakeTestSuite
+ * @return NetCommonsTestSuite
  */
 	public static function suite() {
 		$plugin = preg_replace('/^All([\w]+)Test$/', '$1', __CLASS__);
-		$suite = new CakeTestSuite(sprintf('All %s Plugin tests', $plugin));
-
-		$directory = CakePlugin::path($plugin) . 'Test' . DS . 'Case';
-		$Folder = new Folder($directory);
-		$exceptions = array();
-		$files = $Folder->tree(null, $exceptions, 'files');
-		foreach ($files as $file) {
-			if (substr($file, -4) === '.php') {
-				$suite->addTestFile($file);
-			}
-		}
-
+		$suite = new NetCommonsTestSuite(sprintf('All %s Plugin tests', $plugin));
+		//$suite->addTestDirectoryRecursive(CakePlugin::path($plugin) . 'Test' . DS . 'Case');
 		return $suite;
 	}
 }
