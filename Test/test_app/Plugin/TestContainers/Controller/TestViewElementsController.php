@@ -20,6 +20,15 @@ App::uses('AppController', 'Controller');
 class TestViewElementsController extends AppController {
 
 /**
+ * use component
+ *
+ * @var array
+ */
+	public $components = array(
+		'Pages.PageLayout',
+	);
+
+/**
  * uses
  *
  * @var array
