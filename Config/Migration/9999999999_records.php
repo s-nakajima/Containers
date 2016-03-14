@@ -42,6 +42,7 @@ class Records extends NetCommonsMigration {
  */
 	public $records = array(
 		'Container' => array(
+			//パブリックスペース自体
 			array(
 				'id' => '1',
 				'type' => '1',
@@ -62,9 +63,15 @@ class Records extends NetCommonsMigration {
 				'id' => '5',
 				'type' => '5',
 			),
+			//パブリックスペースのホーム
+			array(
+				'id' => '6',
+				'type' => '3',
+			),
 		),
 
 		'ContainersPage' => array(
+			//パブリックスペース自体
 			array(
 				'id' => '1',
 				'page_id' => '1',
@@ -92,6 +99,37 @@ class Records extends NetCommonsMigration {
 			array(
 				'id' => '5',
 				'page_id' => '1',
+				'container_id' => '5',
+				'is_published' => true,
+			),
+			//パブリックスペースのホーム
+			array(
+				'id' => '6',
+				'page_id' => '2',
+				'container_id' => '1',
+				'is_published' => true,
+			),
+			array(
+				'id' => '7',
+				'page_id' => '2',
+				'container_id' => '2',
+				'is_published' => true,
+			),
+			array(
+				'id' => '8',
+				'page_id' => '2',
+				'container_id' => '6',
+				'is_published' => true,
+			),
+			array(
+				'id' => '9',
+				'page_id' => '2',
+				'container_id' => '4',
+				'is_published' => true,
+			),
+			array(
+				'id' => '10',
+				'page_id' => '2',
 				'container_id' => '5',
 				'is_published' => true,
 			),
