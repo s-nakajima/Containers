@@ -43,96 +43,52 @@ class Records extends NetCommonsMigration {
 	public $records = array(
 		'Container' => array(
 			//パブリックスペース自体
-			array(
-				'id' => '1',
-				'type' => '1',
-			),
-			array(
-				'id' => '2',
-				'type' => '2',
-			),
-			array (
-				'id' => '3',
-				'type' => '3',
-			),
-			array(
-				'id' => '4',
-				'type' => '4',
-			),
-			array(
-				'id' => '5',
-				'type' => '5',
-			),
+			array('id' => '1', 'type' => '1'),
+			array('id' => '2', 'type' => '2'),
+			array('id' => '3', 'type' => '3'),
+			array('id' => '4', 'type' => '4'),
+			array('id' => '5', 'type' => '5'),
+			//プライベートスペース自体
+			array('id' => '6', 'type' => '1'),
+			array('id' => '7', 'type' => '2'),
+			array('id' => '8', 'type' => '3'),
+			array('id' => '9', 'type' => '4'),
+			array('id' => '10', 'type' => '5'),
+			//グループスペース自体
+			array('id' => '11', 'type' => '1'),
+			array('id' => '12', 'type' => '2'),
+			array('id' => '13', 'type' => '3'),
+			array('id' => '14', 'type' => '4'),
+			array('id' => '15', 'type' => '5'),
 			//パブリックスペースのホーム
-			array(
-				'id' => '6',
-				'type' => '3',
-			),
+			array('id' => '16', 'type' => '3'),
 		),
 
 		'ContainersPage' => array(
 			//パブリックスペース自体
-			array(
-				'id' => '1',
-				'page_id' => '1',
-				'container_id' => '1',
-				'is_published' => true,
-			),
-			array(
-				'id' => '2',
-				'page_id' => '1',
-				'container_id' => '2',
-				'is_published' => true,
-			),
-			array(
-				'id' => '3',
-				'page_id' => '1',
-				'container_id' => '3',
-				'is_published' => true,
-			),
-			array(
-				'id' => '4',
-				'page_id' => '1',
-				'container_id' => '4',
-				'is_published' => true,
-			),
-			array(
-				'id' => '5',
-				'page_id' => '1',
-				'container_id' => '5',
-				'is_published' => true,
-			),
+			array('id' => '1', 'page_id' => '1', 'container_id' => '1', 'is_published' => true),
+			array('id' => '2', 'page_id' => '1', 'container_id' => '2', 'is_published' => true),
+			array('id' => '3', 'page_id' => '1', 'container_id' => '3', 'is_published' => true),
+			array('id' => '4', 'page_id' => '1', 'container_id' => '4', 'is_published' => true),
+			array('id' => '5', 'page_id' => '1', 'container_id' => '5', 'is_published' => true),
+			//プライベートスペース自体
+			array('id' => '6', 'page_id' => '2', 'container_id' => '6', 'is_published' => true),
+			array('id' => '7', 'page_id' => '2', 'container_id' => '7', 'is_published' => true),
+			array('id' => '8', 'page_id' => '2', 'container_id' => '8', 'is_published' => true),
+			array('id' => '9', 'page_id' => '2', 'container_id' => '9', 'is_published' => true),
+			array('id' => '10', 'page_id' => '2', 'container_id' => '10', 'is_published' => true),
+			//グループスペース自体
+			array('id' => '11', 'page_id' => '3', 'container_id' => '11', 'is_published' => true),
+			array('id' => '12', 'page_id' => '3', 'container_id' => '12', 'is_published' => true),
+			array('id' => '13', 'page_id' => '3', 'container_id' => '13', 'is_published' => true),
+			array('id' => '14', 'page_id' => '3', 'container_id' => '14', 'is_published' => true),
+			array('id' => '15', 'page_id' => '3', 'container_id' => '15', 'is_published' => true),
 			//パブリックスペースのホーム
-			array(
-				'id' => '6',
-				'page_id' => '2',
-				'container_id' => '1',
-				'is_published' => true,
-			),
-			array(
-				'id' => '7',
-				'page_id' => '2',
-				'container_id' => '2',
-				'is_published' => true,
-			),
-			array(
-				'id' => '8',
-				'page_id' => '2',
-				'container_id' => '6',
-				'is_published' => true,
-			),
-			array(
-				'id' => '9',
-				'page_id' => '2',
-				'container_id' => '4',
-				'is_published' => true,
-			),
-			array(
-				'id' => '10',
-				'page_id' => '2',
-				'container_id' => '5',
-				'is_published' => true,
-			),
+			array('id' => '16', 'page_id' => '4', 'container_id' => '1', 'is_published' => true),
+			array('id' => '17', 'page_id' => '4', 'container_id' => '2', 'is_published' => true),
+			array('id' => '18', 'page_id' => '4', 'container_id' => '16', 'is_published' => true),
+			array('id' => '19', 'page_id' => '4', 'container_id' => '4', 'is_published' => true),
+			array('id' => '20', 'page_id' => '4', 'container_id' => '5', 'is_published' => true),
 		),
 	);
 
