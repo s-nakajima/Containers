@@ -34,6 +34,13 @@ class Container extends ContainersAppModel {
  */
 	public $actsAs = array('Containable');
 
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array();
+
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -77,6 +84,28 @@ class Container extends ContainersAppModel {
 			'finderQuery' => '',
 		)
 	);
+
+/**
+ * Called during validation operations, before validation. Please note that custom
+ * validation rules can be defined in $validate.
+ *
+ * @param array $options Options passed from Model::save().
+ * @return bool True if validate operation should continue, false to abort
+ * @link http://book.cakephp.org/2.0/en/models/callback-methods.html#beforevalidate
+ * @see Model::save()
+ */
+	public function beforeValidate($options = array()) {
+		$this->validate = Hash::merge(array(
+			'type' => array(
+				'numeric' => array(
+					'rule' => array('numeric'),
+					'message' => __d('net_commons', 'Invalid request.'),
+				),
+			),
+		), $this->validate);
+
+		return parent::beforeValidate($options);
+	}
 
 /**
  * Get container with frame
