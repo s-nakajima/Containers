@@ -79,7 +79,7 @@ class ContainerGetContainerWithFrameTest extends NetCommonsGetTest {
 		$this->assertCount(1, Hash::get($result, 'Page'));
 		$this->assertEquals('1', Hash::get($result, 'Page.0.id'));
 		$this->assertEquals('1', Hash::get($result, 'Page.0.lft'));
-		$this->assertEquals('2', Hash::get($result, 'Page.0.rght'));
+		$this->assertEquals('4', Hash::get($result, 'Page.0.rght'));
 		$this->assertEquals('1', Hash::get($result, 'Page.0.ContainersPage.page_id'));
 		$this->assertEquals('1', Hash::get($result, 'Page.0.ContainersPage.container_id'));
 	}
