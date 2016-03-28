@@ -122,7 +122,7 @@ class ContainersPage extends PagesAppModel {
 					$conditions = array(
 						'ContainersPage.is_configured' => false,
 						'ContainersPage.page_id' => $childPageId,
-						'ContainersPage.container_id' => Hash::get($containerPages,  $containerType . '.ContainersPage.container_id'),
+						'ContainersPage.container_id' => Hash::get($containerPages, $containerType . '.ContainersPage.container_id'),
 					);
 
 					$result = $this->updateAll($updated, $conditions);
