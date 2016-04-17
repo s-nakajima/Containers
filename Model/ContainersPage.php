@@ -117,12 +117,16 @@ class ContainersPage extends PagesAppModel {
 				);
 				foreach ($containerTypes as $containerType) {
 					$updated = array(
-						'ContainersPage.is_published' => Hash::get($containerPages, $containerType . '.ContainersPage.is_published', true),
+						'ContainersPage.is_published' => Hash::get(
+							$containerPages, $containerType . '.ContainersPage.is_published', true
+						),
 					);
 					$conditions = array(
 						'ContainersPage.is_configured' => false,
 						'ContainersPage.page_id' => $childPageId,
-						'ContainersPage.container_id' => Hash::get($containerPages, $containerType . '.ContainersPage.container_id'),
+						'ContainersPage.container_id' => Hash::get(
+							$containerPages, $containerType . '.ContainersPage.container_id'
+						),
 					);
 
 					$result = $this->updateAll($updated, $conditions);
