@@ -62,6 +62,7 @@ class TestViewElementsController extends AppController {
 		$boxes = Hash::combine($result['Box'], '{n}.id', '{n}', '{n}.container_id');
 		$this->set('containers', $containers);
 		$this->set('boxes', $boxes);
+		$this->set('containerType', $result['Container']['type']);
 	}
 
 }
