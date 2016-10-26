@@ -32,7 +32,7 @@ class Container extends ContainersAppModel {
  *
  * @var array
  */
-	public $actsAs = array('Containable');
+//	public $actsAs = array('Containable');
 
 /**
  * Validation rules
@@ -113,23 +113,23 @@ class Container extends ContainersAppModel {
  * @param string $id Container ID
  * @return array
  */
-	public function getContainerWithFrame($id) {
-		$query = array(
-			'conditions' => array(
-				'Container.id' => $id
-			),
-			'contain' => array(
-				'Box' => $this->Box->getContainableQueryAssociatedPage(),
-				'Page' => array(
-					//'conditions' => array(
-					//	// It must check settingmode and page_id
-					//	'ContainersPage.is_published' => true
-					//)
-				)
-			)
-		);
-
-		return $this->find('first', $query);
-	}
+//	public function getContainerWithFrame($id) {
+//		$query = array(
+//			'conditions' => array(
+//				'Container.id' => $id
+//			),
+//			'contain' => array(
+//				'Box' => $this->Box->getContainableQueryAssociatedPage(),
+//				'Page' => array(
+//					//'conditions' => array(
+//					//	// It must check settingmode and page_id
+//					//	'ContainersPage.is_published' => true
+//					//)
+//				)
+//			)
+//		);
+//
+//		return $this->find('first', $query);
+//	}
 
 }
